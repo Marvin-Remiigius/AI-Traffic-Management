@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-09-20 02:49:21 by Eclipse SUMO GUI Version 1.24.0
+<sumoConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="../Banglore_Silk_Junction_Map/osm.net.xml.gz"/>
+        <route-files value="../Banglore_Silk_Junction_Map/osm_pt.rou.xml,../Banglore_Silk_Junction_Map/osm.passenger.trips.xml"/>
+        <additional-files value="../Banglore_Silk_Junction_Map/osm.poly.xml.gz,../Banglore_Silk_Junction_Map/osm_stops.add.xml,../Banglore_Silk_Junction_Map/output.add.xml"/>
+    </input>
+
+    <output>
+        <tripinfo-output value="../Banglore_Silk_Junction_Map/tripinfos.xml"/>
+        <stop-output value="../Banglore_Silk_Junction_Map/stopinfos.xml"/>
+        <statistic-output value="../Banglore_Silk_Junction_Map/stats.xml"/>
+    </output>
+
+    <processing>
+        <ignore-route-errors value="true"/>
+        <tls.actuated.jam-threshold value="30"/>
+    </processing>
+
+    <routing>
+        <device.rerouting.adaptation-steps value="18"/>
+        <device.rerouting.adaptation-interval value="10"/>
+    </routing>
+
+    <report>
+        <verbose value="true"/>
+        <duration-log.statistics value="true"/>
+        <no-step-log value="true"/>
+    </report>
+
+    <traci_server>
+        <remote-port value="8813"/>
+    </traci_server>
+
+    <gui_only>
+        <gui-settings-file value="../Banglore_Silk_Junction_Map/osm.view.xml"/>
+        <start value="true"/>
+    </gui_only>
+
+</sumoConfiguration>
+-->
+
+<stops xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/stopinfo_file.xsd">
+    <stopinfo id="pt_bus_HSR-FDR-1:0.0" type="pt_bus" lane="1196120509#0_0" pos="18.15" parking="0" started="33.00" ended="63.00" delay="0.00" busStop="11099858549" initialPersons="0" loadedPersons="0" unloadedPersons="0" initialContainers="0" loadedContainers="0" unloadedContainers="0" blockedDuration="0.00"/>
+    <stopinfo id="pt_bus_HSR-FDR-1:0.0" type="pt_bus" lane="1196120516#0_0" pos="101.46" parking="0" started="127.00" ended="159.00" delay="0.00" busStop="11099858547" initialPersons="0" loadedPersons="0" unloadedPersons="0" initialContainers="0" loadedContainers="0" unloadedContainers="0" blockedDuration="0.00"/>
+    <stopinfo id="pt_bus_201Q:0.0" type="pt_bus" lane="92196679#0_0" pos="85.36" parking="0" started="150.00" ended="178.00" delay="0.00" busStop="2402577150" initialPersons="0" loadedPersons="0" unloadedPersons="0" initialContainers="0" loadedContainers="0" unloadedContainers="0" blockedDuration="0.00"/>
+    <stopinfo id="pt_bus_HSR-FDR-1:0.0" type="pt_bus" lane="1196120516#0_0" pos="101.48" parking="0" started="160.00" ended="190.00" delay="0.00" busStop="11099858548" initialPersons="0" loadedPersons="0" unloadedPersons="0" initialContainers="0" loadedContainers="0" unloadedContainers="0" blockedDuration="0.00"/>
+    <stopinfo id="pt_bus_201Q:0.1" type="pt_bus" lane="92196679#0_0" pos="85.36" parking="0" started="185.00" ended="205.00" delay="21.00" busStop="2402577150" initialPersons="0" loadedPersons="0" unloadedPersons="0" initialContainers="0" loadedContainers="0" unloadedContainers="0" blockedDuration="29.00"/>
+    <stopinfo id="pt_subway_Yellow:0.0" type="pt_subway" lane="607901273_0" pos="265.33" parking="0" started="181.00" ended="212.00" delay="0.00" busStop="13046007572" initialPersons="0" loadedPersons="0" unloadedPersons="0" initialContainers="0" loadedContainers="0" unloadedContainers="0" blockedDuration="0.00"/>
+    <stopinfo id="pt_subway_Yellow:0.1" type="pt_subway" lane="607901273_0" pos="150.81" parking="0" started="185.00" ended="213.00" delay="0.40" busStop="13046007572" initialPersons="0" loadedPersons="0" unloadedPersons="0" initialContainers="0" loadedContainers="0" unloadedContainers="0" blockedDuration="0.00"/>
+</stops>

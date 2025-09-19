@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-09-20 02:02:09 by Eclipse SUMO netconvert Version 1.24.0
+<netconvertConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <type-files value="${SUMO_HOME}\data\typemap\osmNetconvert.typ.xml,${SUMO_HOME}\data\typemap\osmNetconvertAerialway.typ.xml"/>
+        <osm-files value="osm_bbox.osm.xml.gz"/>
+    </input>
+
+    <output>
+        <output-file value="osm.net.xml.gz"/>
+        <output.street-names value="true"/>
+        <output.original-names value="true"/>
+        <ptstop-output value="osm_stops.add.xml"/>
+        <ptline-output value="osm_ptlines.xml"/>
+        <ptline-clean-up value="true"/>
+    </output>
+
+    <projection>
+        <proj.utm value="true"/>
+    </projection>
+
+    <processing>
+        <geometry.remove value="true"/>
+        <roundabouts.guess value="true"/>
+        <lefthand value="true"/>
+    </processing>
+
+    <tls_building>
+        <tls.discard-simple value="true"/>
+        <tls.join value="true"/>
+        <tls.guess-signals value="true"/>
+        <tls.default-type value="actuated"/>
+    </tls_building>
+
+    <ramp_guessing>
+        <ramps.guess value="true"/>
+    </ramp_guessing>
+
+    <edge_removal>
+        <keep-edges.by-vclass value="passenger,bus,tram,rail_urban,subway,cable_car,rail"/>
+    </edge_removal>
+
+    <junctions>
+        <junctions.join value="true"/>
+        <junctions.corner-detail value="5"/>
+    </junctions>
+
+    <railway>
+        <railway.topology.repair value="true"/>
+    </railway>
+
+</netconvertConfiguration>
+-->
+
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <busStop id="-11099858528" lane="-1196120452_0" startPos="59.58" endPos="74.58" friendlyPos="true" lines="HSR-FDR-1"/>
+    <busStop id="-11099858529" lane="-1196120452_0" startPos="59.58" endPos="74.58" friendlyPos="true" lines="HSR-FDR-1"/>
+    <busStop id="-11099858530" name="HSR Club" lane="-1182179244#3_0" startPos="0.00" endPos="15.00" friendlyPos="true" lines="HSR-FDR-1"/>
+    <busStop id="-11099858534" name="Mangammanapalya" lane="-1196120485_0" startPos="10.49" endPos="25.49" friendlyPos="true" lines="HSR-FDR-1"/>
+    <busStop id="10043935992" name="Madiwala" lane="1148717038#0_0" startPos="58.23" endPos="73.23" friendlyPos="true" lines="201Q">
+        <access lane="-40696199#2_0" pos="34.82" length="154.88" friendlyPos="1"/>
+        <access lane="-744783934_0" pos="89.87" length="99.14" friendlyPos="1"/>
+        <access lane="239438610#0_0" pos="5.94" length="134.22" friendlyPos="1"/>
+        <access lane="744783934_0" pos="0.00" length="95.14" friendlyPos="1"/>
+        <access lane="92196679#0_0" pos="967.18" length="106.70" friendlyPos="1"/>
+    </busStop>
+    <busStop id="11099858532" lane="1369156735_0" startPos="12.21" endPos="27.21" friendlyPos="true" lines="HSR-FDR-1"/>
+    <busStop id="11099858533" lane="1369156735_0" startPos="12.21" endPos="27.21" friendlyPos="true" lines="HSR-FDR-1"/>
+    <busStop id="11099858537" name="5th Main Road" lane="1340257806#1_0" startPos="126.51" endPos="141.51" friendlyPos="true" lines="HSR-FDR-1"/>
+    <busStop id="11099858538" name="5th Main" lane="1340257806#1_0" startPos="126.51" endPos="141.51" friendlyPos="true" lines="HSR-FDR-1"/>
+    <busStop id="11099858539" name="9th Main" lane="794634830#5_0" startPos="0.00" endPos="15.00" friendlyPos="true" lines="HSR-FDR-1"/>
+    <busStop id="11099858541" name="14th Main Road" lane="1055330320#0_0" startPos="6.68" endPos="21.68" friendlyPos="true" lines="HSR-FDR-1"/>
+    <busStop id="11099858543" lane="1292583899#0_0" startPos="0.00" endPos="15.00" friendlyPos="true"/>
+    <busStop id="11099858544" lane="794634829#2_0" startPos="76.62" endPos="91.62" friendlyPos="true" lines="HSR-FDR-1"/>
+    <busStop id="11099858545" name="19th Main" lane="1206400802#2_0" startPos="42.12" endPos="57.12" friendlyPos="true" lines="HSR-FDR-1"/>
+    <busStop id="11099858547" lane="1196120516#0_0" startPos="86.48" endPos="101.48" friendlyPos="true" lines="HSR-FDR-1"/>
+    <busStop id="11099858548" lane="1196120516#0_0" startPos="86.48" endPos="101.48" friendlyPos="true" lines="HSR-FDR-1"/>
+    <busStop id="11099858549" name="Indian Oil" lane="1196120509#0_0" startPos="3.15" endPos="18.15" friendlyPos="true" lines="HSR-FDR-1"/>
+    <busStop id="12040966324" name="Central Silk Board" lane="607901273_0" startPos="1082.71" endPos="1282.71" friendlyPos="true" lines="Yellow">
+        <access lane="-886153775#1_0" pos="0.00" length="39.72" friendlyPos="1"/>
+        <access lane="1299917514_0" pos="0.00" length="29.40" friendlyPos="1"/>
+        <access lane="27994428#0_0" pos="0.00" length="49.33" friendlyPos="1"/>
+        <access lane="886153772_0" pos="1579.43" length="29.50" friendlyPos="1"/>
+        <access lane="886153775#0_0" pos="6.57" length="43.15" friendlyPos="1"/>
+    </busStop>
+    <busStop id="13046007572" name="Bommanahalli" lane="607901273_0" startPos="65.33" endPos="265.33" friendlyPos="true" lines="Yellow">
+        <access lane="-1101675544#1_0" pos="163.92" length="36.98" friendlyPos="1"/>
+        <access lane="-1155963377_0" pos="0.10" length="35.91" friendlyPos="1"/>
+        <access lane="1101675544#0_0" pos="18.55" length="32.18" friendlyPos="1"/>
+        <access lane="1155963377_0" pos="0.00" length="40.55" friendlyPos="1"/>
+        <access lane="744561214#6_0" pos="151.32" length="4.05" friendlyPos="1"/>
+    </busStop>
+    <busStop id="13046007573" name="Bommanahalli" lane="1299917516_0" startPos="2427.21" endPos="2627.21" friendlyPos="true" lines="Yellow">
+        <access lane="-1101675544#1_0" pos="47.07" length="45.75" friendlyPos="1"/>
+        <access lane="1101675544#0_0" pos="135.40" length="40.95" friendlyPos="1"/>
+        <access lane="1101675544#2_0" pos="0.00" length="66.56" friendlyPos="1"/>
+        <access lane="744561214#6_0" pos="34.33" length="4.91" friendlyPos="1"/>
+        <access lane="744561216#3_0" pos="273.97" length="58.77" friendlyPos="1"/>
+    </busStop>
+    <busStop id="13046007574" name="Central Silk Board" lane="1299917516_0" startPos="1443.98" endPos="1643.98" friendlyPos="true" lines="Yellow">
+        <access lane="-27994428#0_0" pos="7.16" length="130.09" friendlyPos="1"/>
+        <access lane="-27994428#1_0" pos="120.38" length="133.98" friendlyPos="1"/>
+        <access lane="1103401541#0_0" pos="76.87" length="21.36" friendlyPos="1"/>
+        <access lane="1299917514_0" pos="94.11" length="81.34" friendlyPos="1"/>
+        <access lane="1301808820_0" pos="41.61" length="93.97" friendlyPos="1"/>
+    </busStop>
+    <busStop id="13046007575" name="BTM Layout" lane="1299917516_0" startPos="87.40" endPos="287.40" friendlyPos="true" lines="Yellow">
+        <access lane="-195410466#0_0" pos="0.20" length="36.12" friendlyPos="1"/>
+        <access lane="1082321302#1_0" pos="58.95" length="42.03" friendlyPos="1"/>
+        <access lane="195410466#0_0" pos="0.00" length="32.81" friendlyPos="1"/>
+        <access lane="28103491#0_0" pos="102.61" length="32.96" friendlyPos="1"/>
+        <access lane="886153772_0" pos="338.26" length="7.49" friendlyPos="1"/>
+    </busStop>
+    <busStop id="13046007576" name="BTM Layout" lane="607901273_0" startPos="2423.93" endPos="2623.93" friendlyPos="true" lines="Yellow">
+        <access lane="1082321302#1_0" pos="166.36" length="36.00" friendlyPos="1"/>
+        <access lane="1422674082_0" pos="7.31" length="37.69" friendlyPos="1"/>
+        <access lane="28103491#0_0" pos="0.00" length="40.95" friendlyPos="1"/>
+        <access lane="28120245#0_0" pos="0.00" length="43.02" friendlyPos="1"/>
+        <access lane="886153772_0" pos="230.81" length="13.58" friendlyPos="1"/>
+    </busStop>
+    <busStop id="1473298101" name="Madiwala Market" lane="92196679#0_0" startPos="868.45" endPos="883.45" friendlyPos="true" lines="201Q 362C"/>
+    <busStop id="1723780077" name="Roopena Agrahara" lane="1196514116#0_0" startPos="72.45" endPos="87.45" friendlyPos="true" lines="362C">
+        <access lane="-1155963377_0" pos="0.00" length="97.60" friendlyPos="1"/>
+        <access lane="-661917532_0" pos="111.79" length="108.89" friendlyPos="1"/>
+        <access lane="1155963377_0" pos="0.10" length="93.55" friendlyPos="1"/>
+        <access lane="160556513#0_0" pos="51.42" length="64.25" friendlyPos="1"/>
+        <access lane="744561216#3_0" pos="74.92" length="15.37" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2402577150" name="Krupanidi College" lane="92196679#0_0" startPos="70.36" endPos="85.36" friendlyPos="true" lines="201Q 362C"/>
+    <busStop id="5928050269" name="Salarpuria Serenity" lane="1391538489_0" startPos="8.91" endPos="23.91" friendlyPos="true" lines="HSR-FDR-1"/>
+</additional>

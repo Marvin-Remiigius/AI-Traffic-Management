@@ -1,0 +1,5 @@
+<routes>
+    <vType id="emergency_vehicle" vClass="emergency" accel="4.0" decel="7.5" color="1,0,0" guiShape="emergency"/>
+    <route id="emergency_route" edges="WN NE" />
+    <vehicle id="emergency_0" type="emergency_vehicle" route="emergency_route" depart="10" departLane="free" />
+</routes>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-09-20 02:02:17.520598 by osmWebWizard.py v1_24_0+0000-b72eb3fabc8
+<configuration>
+    <net-file value="C:\Users\sujit\Desktop\SIH25\smart-traffic-system\2025-09-20-02-01-56\osm.net.xml.gz"/>
+    <ptlines-file value="C:\Users\sujit\Desktop\SIH25\smart-traffic-system\2025-09-20-02-01-56\osm_ptlines.xml"/>
+    <ptstops-file value="C:\Users\sujit\Desktop\SIH25\smart-traffic-system\2025-09-20-02-01-56\osm_stops.add.xml"/>
+    <output-file value="C:\Users\sujit\Desktop\SIH25\smart-traffic-system\2025-09-20-02-01-56\osm_pt.rou.xml"/>
+    <stopinfos-file value="C:\Users\sujit\Desktop\SIH25\smart-traffic-system\2025-09-20-02-01-56\stopinfos.xml"/>
+    <routes-file value="C:\Users\sujit\Desktop\SIH25\smart-traffic-system\2025-09-20-02-01-56\vehroutes.xml"/>
+    <trips-file value="C:\Users\sujit\Desktop\SIH25\smart-traffic-system\2025-09-20-02-01-56\trips.trips.xml"/>
+    <min-stops value="0"/>
+    <extend-to-fringe value="True"/>
+    <random-begin value="True"/>
+    <seed value="42"/>
+    <ignore-errors value="True"/>
+    <vtype-prefix value="pt_"/>
+    <verbose value="True"/>
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="pt_bus" vClass="bus"/>
+    <vType id="pt_tram" vClass="tram"/>
+    <vType id="pt_train" vClass="rail"/>
+    <vType id="pt_subway" vClass="subway"/>
+    <vType id="pt_light_rail" vClass="rail_urban"/>
+    <vType id="pt_monorail" vClass="rail_urban"/>
+    <vType id="pt_trolleybus" vClass="bus"/>
+    <vType id="pt_minibus" vClass="bus"/>
+    <vType id="pt_share_taxi" vClass="taxi"/>
+    <vType id="pt_aerialway" vClass="cable_car" length="2.5" width="2" personCapacity="4"/>
+    <vType id="pt_ferry" vClass="ship"/>
+    <route id="pt_bus_201Q:0" edges="92196679#0 1148717038#0 40696223#1 40696219#0 40696219#0-AddedOffRampEdge 40696219#1" >
+        <stop busStop="2402577150" duration="20" until="45.0"/> <!-- Krupanidi College -->
+        <stop busStop="1473298101" duration="20" until="124.0"/> <!-- Madiwala Market -->
+        <stop busStop="10043935992" duration="20" until="179.0"/> <!-- Madiwala -->
+    </route>
+    <route id="pt_bus_362C:0" edges="150510724#1 150510724#2 1311812959#0 92196679#0 1148717038#0 40696223#1 40696219#0 40696219#0-AddedOffRampEdge 40696219#1 160331538#0 1109948700#0 1109948700#1 377124830 370328588#0 744561216#0 744561216#1 1042112410 1196514116#0 1196514117#0 1196514118 148211165 48691692 229965238" >
+        <stop busStop="2402577150" duration="20" until="85.0"/> <!-- Krupanidi College -->
+        <stop busStop="1473298101" duration="20" until="164.0"/> <!-- Madiwala Market -->
+        <stop busStop="1723780077" duration="20" until="324.0"/> <!-- Roopena Agrahara -->
+    </route>
+    <route id="pt_bus_HSR-FDR-1:0" edges="1196120502#0 1196120509#0 1196120511 1196120512#0 1196120514 1196120516#0 1196120517#0 1196120518 1105437335#1 1206400802#1 1206400802#2 735373204#1 794634829#2 1066915263#0 1292583899#0 -24490731#1 794634829#2 794634829#4 1055330320#0 794634830#0 794634830#1 794634830#2 794634830#3 794634830#5 794634830#7 1215278281#0 1215278273#0 1340257806#1 1340257806#4 413271593 1384917245 1384917246 1391538490 1391538488 1391538489 -1196120520 -1196120523 -1196120526 -1196120485 -1196120486 -1196120487 -27935848#5 -27935848#4 -27935848#3 -27935848#2 -27935848#1 -27935848#0 1369156735 -640876756#6 -640876756#5 -640876756#4 -640876756#3 -640876756#2 -640876756#0 -1182179244#3 -1182179244#2 -1182179244#1 -1182179244#0 -45194562 -1109945658 -1196120452" >
+        <stop busStop="11099858549" duration="20" until="48.0"/> <!-- Indian Oil -->
+        <stop busStop="11099858547" duration="20" until="144.0"/> <!-- None -->
+        <stop busStop="11099858548" duration="20" until="175.0"/> <!-- None -->
+        <stop busStop="11099858545" duration="20" until="255.0"/> <!-- 19th Main -->
+        <stop busStop="11099858543" duration="20" until="342.0"/> <!-- None -->
+        <stop busStop="11099858544" duration="20" until="400.0"/> <!-- None -->
+        <stop busStop="11099858541" duration="20" until="466.0"/> <!-- 14th Main Road -->
+        <stop busStop="11099858539" duration="20" until="527.0"/> <!-- 9th Main -->
+        <stop busStop="11099858537" duration="20" until="603.0"/> <!-- 5th Main Road -->
+        <stop busStop="11099858538" duration="20" until="634.0"/> <!-- 5th Main -->
+        <stop busStop="5928050269" duration="20" until="698.0"/> <!-- Salarpuria Serenity -->
+        <stop busStop="-11099858534" duration="20" until="766.0"/> <!-- Mangammanapalya -->
+        <stop busStop="11099858532" duration="20" until="850.0"/> <!-- None -->
+        <stop busStop="11099858533" duration="20" until="881.0"/> <!-- None -->
+        <stop busStop="-11099858530" duration="20" until="952.0"/> <!-- HSR Club -->
+        <stop busStop="-11099858528" duration="20" until="1022.0"/> <!-- None -->
+        <stop busStop="-11099858529" duration="20" until="1053.0"/> <!-- None -->
+    </route>
+    <route id="pt_subway_Yellow:0" color="yellow" edges="607901273" >
+        <stop busStop="13046007572" duration="20" until="47.0"/> <!-- Bommanahalli -->
+        <stop busStop="12040966324" duration="20" until="126.0"/> <!-- Central Silk Board -->
+        <stop busStop="13046007576" duration="20" until="215.0"/> <!-- BTM Layout -->
+    </route>
+    <route id="pt_subway_Yellow:1" color="yellow" edges="1299917516" >
+        <stop busStop="13046007575" duration="20" until="47.0"/> <!-- BTM Layout -->
+        <stop busStop="13046007574" duration="20" until="138.0"/> <!-- Central Silk Board -->
+        <stop busStop="13046007573" duration="20" until="216.0"/> <!-- Bommanahalli -->
+    </route>
+    <flow id="pt_bus_HSR-FDR-1:0" type="pt_bus" route="pt_bus_HSR-FDR-1:0" begin="15.0" end="3615.0" period="600" line="HSR-FDR-1:0" >
+        <param key="name" value="HSR-FDR-1 (Agara =&gt; Agara)"/>
+        <param key="completeness" value="0.42"/>
+    </flow>
+    <flow id="pt_bus_201Q:0" type="pt_bus" route="pt_bus_201Q:0" begin="133.0" end="3733.0" period="600" line="201Q:0" >
+        <param key="name" value="201Q"/>
+        <param key="completeness" value="0.19"/>
+    </flow>
+    <flow id="pt_subway_Yellow:0" type="pt_subway" route="pt_subway_Yellow:0" begin="165.0" end="3765.0" period="600" line="Yellow:0" >
+        <param key="name" value="Yellow Line (Delta Electronics Bommasandra → Rashtreeya Vidyalaya Road)"/>
+        <param key="completeness" value="0.19"/>
+    </flow>
+    <flow id="pt_subway_Yellow:1" type="pt_subway" route="pt_subway_Yellow:1" begin="383.0" end="3983.0" period="600" line="Yellow:1" >
+        <param key="name" value="Yellow Line (Rashtreeya Vidyalaya Road → Delta Electronics Bommasandra)"/>
+        <param key="completeness" value="0.19"/>
+    </flow>
+    <flow id="pt_bus_362C:0" type="pt_bus" route="pt_bus_362C:0" begin="441.0" end="4041.0" period="600" line="362C:0" >
+        <param key="name" value="362C: Shivajinagara Bus Station =&gt; Beguru"/>
+        <param key="completeness" value="0.11"/>
+    </flow>
+</routes>

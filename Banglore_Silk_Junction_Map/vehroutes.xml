@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-09-20 02:02:16 by Eclipse SUMO sumo Version 1.24.0
+<sumoConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="C:\Users\sujit\Desktop\SIH25\smart-traffic-system\2025-09-20-02-01-56\osm.net.xml.gz"/>
+        <route-files value="C:\Users\sujit\Desktop\SIH25\smart-traffic-system\2025-09-20-02-01-56\trips.trips.xml"/>
+        <additional-files value="C:\Users\sujit\Desktop\SIH25\smart-traffic-system\2025-09-20-02-01-56\osm_stops.add.xml"/>
+    </input>
+
+    <output>
+        <vehroute-output value="C:\Users\sujit\Desktop\SIH25\smart-traffic-system\2025-09-20-02-01-56\vehroutes.xml"/>
+        <stop-output value="C:\Users\sujit\Desktop\SIH25\smart-traffic-system\2025-09-20-02-01-56\stopinfos.xml"/>
+    </output>
+
+    <time>
+        <begin value="0.0"/>
+    </time>
+
+    <processing>
+        <ignore-route-errors value="true"/>
+        <time-to-teleport.disconnected value="0"/>
+    </processing>
+
+    <routing>
+        <device.rerouting.adaptation-interval value="0"/>
+    </routing>
+
+    <report>
+        <aggregate-warnings value="5"/>
+        <error-log value="C:\Users\sujit\Desktop\SIH25\smart-traffic-system\2025-09-20-02-01-56\trips.trips.xml.errorlog"/>
+        <no-step-log value="true"/>
+    </report>
+
+</sumoConfiguration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vehicle id="1_bus_201Q:0" type="pt_bus" depart="133.00" departLane="0" arrival="337.00">
+        <route edges="92196679#0 1148717038#0 40696223#1 40696219#0 40696219#0-AddedOffRampEdge 40696219#1"/>
+        <stop busStop="2402577150" duration="30.00"/>
+        <stop busStop="1473298101" duration="30.00"/>
+        <stop busStop="10043935992" duration="30.00"/>
+    </vehicle>
+
+    <vehicle id="2_subway_Yellow:0" type="pt_subway" depart="165.00" departLane="0" arrival="380.00">
+        <route edges="607901273"/>
+        <stop busStop="13046007572" duration="30.00"/>
+        <stop busStop="12040966324" duration="30.00"/>
+        <stop busStop="13046007576" duration="30.00"/>
+    </vehicle>
+
+    <vehicle id="3_subway_Yellow:1" type="pt_subway" depart="383.00" departLane="0" arrival="599.00">
+        <route edges="1299917516"/>
+        <stop busStop="13046007575" duration="30.00"/>
+        <stop busStop="13046007574" duration="30.00"/>
+        <stop busStop="13046007573" duration="30.00"/>
+    </vehicle>
+
+    <vehicle id="4_bus_362C:0" type="pt_bus" depart="441.00" departLane="2" arrival="817.00">
+        <route edges="150510724#1 150510724#2 1311812959#0 92196679#0 1148717038#0 40696223#1 40696219#0 40696219#0-AddedOffRampEdge 40696219#1 160331538#0 1109948700#0 1109948700#1 377124830 370328588#0 744561216#0 744561216#1 1042112410 1196514116#0 1196514117#0 1196514118 148211165 48691692 229965238"/>
+        <stop busStop="2402577150" duration="30.00"/>
+        <stop busStop="1473298101" duration="30.00"/>
+        <stop busStop="1723780077" duration="30.00"/>
+    </vehicle>
+
+    <vehicle id="0_bus_HSR-FDR-1:0" type="pt_bus" depart="15.00" departLane="0" arrival="1068.00">
+        <route edges="1196120502#0 1196120509#0 1196120511 1196120512#0 1196120514 1196120516#0 1196120517#0 1196120518 1105437335#1 1206400802#1 1206400802#2 735373204#1 794634829#2 1066915263#0 1292583899#0 -24490731#1 794634829#2 794634829#4 1055330320#0 794634830#0 794634830#1 794634830#2 794634830#3 794634830#5 794634830#7 1215278281#0 1215278273#0 1340257806#1 1340257806#4 413271593 1384917245 1384917246 1391538490 1391538488 1391538489 -1196120520 -1196120523 -1196120526 -1196120485 -1196120486 -1196120487 -27935848#5 -27935848#4 -27935848#3 -27935848#2 -27935848#1 -27935848#0 1369156735 -640876756#6 -640876756#5 -640876756#4 -640876756#3 -640876756#2 -640876756#0 -1182179244#3 -1182179244#2 -1182179244#1 -1182179244#0 -45194562 -1109945658 -1196120452"/>
+        <stop busStop="11099858549" duration="30.00"/>
+        <stop busStop="11099858547" duration="30.00"/>
+        <stop busStop="11099858548" duration="30.00"/>
+        <stop busStop="11099858545" duration="30.00"/>
+        <stop busStop="11099858543" duration="30.00"/>
+        <stop busStop="11099858544" duration="30.00"/>
+        <stop busStop="11099858541" duration="30.00"/>
+        <stop busStop="11099858539" duration="30.00"/>
+        <stop busStop="11099858537" duration="30.00"/>
+        <stop busStop="11099858538" duration="30.00"/>
+        <stop busStop="5928050269" duration="30.00"/>
+        <stop busStop="-11099858534" duration="30.00"/>
+        <stop busStop="11099858532" duration="30.00"/>
+        <stop busStop="11099858533" duration="30.00"/>
+        <stop busStop="-11099858530" duration="30.00"/>
+        <stop busStop="-11099858528" duration="30.00"/>
+        <stop busStop="-11099858529" duration="30.00"/>
+    </vehicle>
+
+</routes>
