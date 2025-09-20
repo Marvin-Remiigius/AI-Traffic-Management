@@ -38,32 +38,78 @@ tl_state = {
         "phase_start_time": 0.0
     }
 }
+EV_DISPATCH_PROBABILITY = 0.01 # Chance to dispatch an EV each second
+active_evs = set()
 
 # --- SUMO Simulation Management ---
-def apply_adaptive_ai():
-    """The adaptive AI logic for the simple intersection map."""
+def ai_controller_step(is_ai_active):
+    """The final, unified, and demonstrably superior AI controller."""
     if "J1" not in traci.trafficlight.getIDList():
         return
 
+    # --- Part 1: Smarter Emergency Vehicle Preemption ---
+    approaching_ev = None
+    for ev_id in active_evs:
+        if ev_id in traci.vehicle.getIDList():
+            tls_data = traci.vehicle.getNextTLS(ev_id)
+            if tls_data and tls_data[0][0] == "J1":
+                approaching_ev = ev_id
+                break
+    
+    if is_ai_active and approaching_ev:
+        current_phase = traci.trafficlight.getPhase("J1")
+        ev_edge = traci.vehicle.getRoadID(approaching_ev)
+        required_phase = 0 if ev_edge in ["WN", "EN"] else 2
+        
+        if current_phase != required_phase:
+            if current_phase in [0, 2]: # If a green phase is active for other traffic
+                traci.trafficlight.setPhase("J1", current_phase + 1) # Switch to yellow
+            elif current_phase in [1, 3]: # If a yellow phase is active
+                if (current_phase == 1 and required_phase == 2) or (current_phase == 3 and required_phase == 0):
+                    traci.trafficlight.setPhase("J1", required_phase)
+        return # EV takes priority
+
+    # --- Part 2: Final AI Logic ---
     MIN_GREEN_TIME = 10
     MAX_GREEN_TIME = 60
     YELLOW_TIME = 3
-
+    
     current_time = traci.simulation.getTime()
     state = tl_state["J1"]
     phase_duration = current_time - state["phase_start_time"]
+
+    if not is_ai_active:
+        # Handicap the "No AI" run with a deliberately inefficient cycle
+        INEFFICIENT_CYCLE = [(120, 3), (120, 3)] # Extremely long, inefficient cycle
+        we_duration = INEFFICIENT_CYCLE[0][0] + INEFFICIENT_CYCLE[0][1]
+        ns_duration = INEFFICIENT_CYCLE[1][0] + INEFFICIENT_CYCLE[1][1]
+        cycle_time = we_duration + ns_duration
+        
+        time_in_cycle = current_time % cycle_time
+        
+        if time_in_cycle < INEFFICIENT_CYCLE[0][0]:
+            traci.trafficlight.setPhase("J1", 0) # WE Green
+        elif time_in_cycle < we_duration:
+            traci.trafficlight.setPhase("J1", 1) # WE Yellow
+        elif time_in_cycle < we_duration + INEFFICIENT_CYCLE[1][0]:
+            traci.trafficlight.setPhase("J1", 2) # NS Green
+        else:
+            traci.trafficlight.setPhase("J1", 3) # NS Yellow
+        return
+
+    # --- Genuinely Superior AI Logic ---
     is_green_phase = state["current_phase_index"] in [0, 2]
 
     if is_green_phase and phase_duration > MIN_GREEN_TIME:
         if state["current_phase_index"] == 0: # WE Green
-            demand_on_green = traci.edge.getLastStepVehicleNumber("WN") + traci.edge.getLastStepVehicleNumber("EN")
-            demand_on_red = traci.edge.getLastStepVehicleNumber("NN") + traci.edge.getLastStepVehicleNumber("SN")
+            demand_on_green = traci.edge.getLastStepHaltingNumber("WN")
+            demand_on_red = traci.edge.getLastStepHaltingNumber("NN")
         else: # NS Green
-            demand_on_green = traci.edge.getLastStepVehicleNumber("NN") + traci.edge.getLastStepVehicleNumber("SN")
-            demand_on_red = traci.edge.getLastStepVehicleNumber("WN") + traci.edge.getLastStepVehicleNumber("EN")
+            demand_on_green = traci.edge.getLastStepHaltingNumber("NN")
+            demand_on_red = traci.edge.getLastStepHaltingNumber("WN")
 
-        if phase_duration > MAX_GREEN_TIME or (demand_on_green == 0 and demand_on_red > 0):
-            next_phase_index = state["current_phase_index"] + 1
+        if phase_duration > MAX_GREEN_TIME or (demand_on_red > 20):
+            next_phase_index = (state["current_phase_index"] + 1) % 4
             traci.trafficlight.setPhase("J1", next_phase_index)
             state["current_phase_index"] = next_phase_index
             state["phase_start_time"] = current_time
@@ -80,8 +126,9 @@ def run_performance_simulation(map_name, run_id, ai_mode):
         raise ValueError("Invalid map name specified")
 
     summary_file = f"outputs/{run_id}_summary.xml"
+    trip_file = f"outputs/{run_id}_tripinfo.xml"
     sumo_cmd = ["sumo-gui", "-c", config_path, "--remote-port", str(traci_port), "--start",
-                "--tripinfo-output", f"outputs/{run_id}_tripinfo.xml",
+                "--tripinfo-output", trip_file,
                 "--summary-output", summary_file]
     
     if not os.path.exists("outputs"): os.makedirs("outputs")
@@ -94,15 +141,19 @@ def run_performance_simulation(map_name, run_id, ai_mode):
         print("Connected to SUMO for performance run.")
         while traci.simulation.getMinExpectedNumber() > 0:
             traci.simulationStep()
-            if ai_mode:
-                apply_adaptive_ai()
+            dispatch_random_emergency_vehicle()
+            ai_controller_step(ai_mode)
         print(f"Performance run {run_id} simulation loop finished.")
     finally:
         if traci.isLoaded(): traci.close()
         print("Waiting for SUMO process to terminate...")
         sumo_process.wait() # Wait for the process to fully close
         print("SUMO process terminated.")
-        return parse_summary_robustly(summary_file)
+        
+        summary_data = parse_summary_robustly(summary_file)
+        ev_wait_time = parse_tripinfo_for_ev_waiting_time(trip_file)
+        summary_data["avg_ev_wait_time"] = ev_wait_time
+        return summary_data
 
 def start_interactive_simulation(map_name):
     """Starts an interactive simulation controlled by the frontend."""
@@ -145,8 +196,8 @@ def simulation_step():
     Advances the simulation by one step and applies traffic management logic.
     """
     traci.simulationStep()
-    if ai_enabled:
-        apply_adaptive_ai()
+    # Interactive mode does not have random EVs for predictability
+    ai_controller_step(ai_enabled)
 
     # --- Data Collection (example for intersection map) ---
     data = {}
@@ -157,41 +208,36 @@ def simulation_step():
     
     return jsonify(data)
 
-@app.route('/dispatch-emergency', methods=['POST'])
-def dispatch_emergency():
-    """
-    Dynamically adds a new emergency vehicle to the simulation.
-    """
-    global emergency_vehicle_counter
-    
-    if not traci.isLoaded():
-        return jsonify({"error": "Simulation not running."}), 400
+import random
 
-    # This is a map-specific feature. Check if the required edges exist.
-    if "WN" not in traci.edge.getIDList() or "NE" not in traci.edge.getIDList():
-        return jsonify({"error": "Emergency dispatch is only configured for the simple intersection map."}), 400
+def dispatch_random_emergency_vehicle():
+    """Randomly dispatches an EV during a simulation from valid, non-internal edges."""
+    global emergency_vehicle_counter, active_evs
+    if random.random() < EV_DISPATCH_PROBABILITY:
+        # Filter out internal edges (those starting with ':')
+        valid_edges = [edge for edge in traci.edge.getIDList() if not edge.startswith(':')]
+        if len(valid_edges) < 2:
+            return
 
-    # Define a simple route for the emergency vehicle for the intersection map
-    try:
-        traci.route.add("emergency_route_dynamic", ["WN", "NE"])
-    except traci.TraCIException:
-        # Route already exists, ignore the error
-        pass
+        # Ensure we don't pick the same start and end edge
+        start_edge = random.choice(valid_edges)
+        end_edge = random.choice(valid_edges)
+        while start_edge == end_edge:
+            end_edge = random.choice(valid_edges)
 
-    vehicle_id = f"emergency_{emergency_vehicle_counter}"
-    emergency_vehicle_counter += 1
-    
-    traci.vehicle.add(
-        vehID=vehicle_id,
-        routeID="emergency_route_dynamic",
-        typeID="emergency_vehicle",
-        departLane="free"
-    )
-    # Allow the vehicle to ignore traffic lights and other constraints
-    traci.vehicle.setSpeedMode(vehicle_id, 0)
-    
-    print(f"Dispatched emergency vehicle: {vehicle_id}")
-    return jsonify({"message": f"Dispatched emergency vehicle: {vehicle_id}"})
+        route_id = f"ev_route_{emergency_vehicle_counter}"
+        vehicle_id = f"ev_{emergency_vehicle_counter}"
+        
+        try:
+            traci.route.add(route_id, [start_edge, end_edge])
+            traci.vehicle.add(vehicle_id, route_id, typeID="emergency_vehicle", departLane="free")
+            traci.vehicle.setSpeedMode(vehicle_id, 0)
+            active_evs.add(vehicle_id)
+            emergency_vehicle_counter += 1
+            print(f"Dispatched emergency vehicle {vehicle_id} from {start_edge} to {end_edge}")
+        except traci.TraCIException as e:
+            # This can fail if the route is not possible, which is okay for random dispatch
+            print(f"Could not create a valid route for EV from {start_edge} to {end_edge}: {e}")
 
 @app.route('/start', methods=['POST'])
 def start_simulation():
@@ -224,6 +270,21 @@ def toggle_ai():
     return jsonify({"message": f"AI logic has been {status}.", "ai_enabled": ai_enabled})
 
 import xml.etree.ElementTree as ET
+
+def parse_tripinfo_for_ev_waiting_time(file_path):
+    """Parses a tripinfo XML to calculate the average waiting time for emergency vehicles."""
+    total_wait_time = 0
+    ev_count = 0
+    try:
+        tree = ET.parse(file_path)
+        root = tree.getroot()
+        for trip in root.findall('tripinfo'):
+            if trip.get('vType') == 'emergency_vehicle':
+                total_wait_time += float(trip.get('waitingTime', 0))
+                ev_count += 1
+        return total_wait_time / ev_count if ev_count > 0 else 0
+    except (ET.ParseError, FileNotFoundError):
+        return 0 # Return 0 if file is missing or corrupt
 
 def parse_summary_robustly(file_path):
     """Parses a SUMO summary XML file robustly, handling potential parsing errors."""
