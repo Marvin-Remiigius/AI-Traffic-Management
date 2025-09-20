@@ -26,7 +26,7 @@ function App() {
           // Stop polling if the simulation is no longer reachable
           setIsRunning(false);
         });
-    }, 1000); // Step every 1 second
+    }, 50); // Step every 0.05 seconds
 
     return () => clearInterval(interval);
   }, [isRunning]);
@@ -107,13 +107,11 @@ function App() {
           </button>
         </div>
 
-        {isRunning && (
-          <div className="simulation-actions">
-            <button onClick={handleToggleAI}>
-              {aiEnabled ? 'Disable AI' : 'Enable AI'}
-            </button>
-          </div>
-        )}
+        <div className="simulation-actions">
+          <button onClick={handleToggleAI} disabled={!isRunning}>
+            {aiEnabled ? 'Disable AI' : 'Enable AI'}
+          </button>
+        </div>
       </div>
 
       {isRunning && (

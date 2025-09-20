@@ -167,7 +167,7 @@ def start_interactive_simulation(map_name):
     config_path = MAP_CONFIGS.get(map_name)
     if not config_path: raise ValueError("Invalid map name specified")
 
-    sumo_cmd = ["sumo-gui", "-c", config_path, "--remote-port", str(traci_port), "--start"]
+    sumo_cmd = ["sumo-gui", "-c", config_path, "--remote-port", str(traci_port), "--start", "--step-length", "0.5"]
     ai_enabled = False
     
     print(f"Starting interactive simulation: {' '.join(sumo_cmd)}")

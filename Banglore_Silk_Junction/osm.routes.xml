@@ -9,6 +9,7 @@
 -->
 
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="emergency_vehicle" vClass="emergency" accel="4.0" decel="7.5" color="1,0,0" guiShape="emergency"/>
     <trip id="0" depart="0.00" from="237089962#1" to="-1185209422#0"/>
     <trip id="1" depart="0.50" from="28103470" to="27935002#1"/>
     <trip id="2" depart="1.00" from="491889865#1" to="-147575130#0"/>
