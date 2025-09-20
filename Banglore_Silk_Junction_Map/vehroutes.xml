@@ -43,13 +43,13 @@
         <stop busStop="1473298101" duration="30.00"/>
         <stop busStop="10043935992" duration="30.00"/>
     </vehicle>
-
+<!-- 
     <vehicle id="2_subway_Yellow:0" type="pt_subway" depart="165.00" departLane="0" arrival="380.00">
         <route edges="607901273"/>
         <stop busStop="13046007572" duration="30.00"/>
         <stop busStop="12040966324" duration="30.00"/>
         <stop busStop="13046007576" duration="30.00"/>
-    </vehicle>
+    </vehicle> -->
 
     <vehicle id="3_subway_Yellow:1" type="pt_subway" depart="383.00" departLane="0" arrival="599.00">
         <route edges="1299917516"/>
