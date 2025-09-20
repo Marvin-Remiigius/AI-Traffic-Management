@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2025-09-21 00:47:20 by Eclipse SUMO GUI Version 1.24.0
+<!-- generated on 2025-09-21 01:20:32 by Eclipse SUMO GUI Version 1.24.0
 <sumoConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
 
     <input>
-        <net-file value="C:\Users\sujit\Desktop\SIH25\smart-traffic-system\Banglore_Silk_Junction\osm.net.xml.gz"/>
-        <route-files value="C:\Users\sujit\Desktop\SIH25\smart-traffic-system\Banglore_Silk_Junction\osm.routes.xml"/>
-        <additional-files value="C:\Users\sujit\Desktop\SIH25\smart-traffic-system\Banglore_Silk_Junction\osm.poly.xml.gz,C:\Users\sujit\Desktop\SIH25\smart-traffic-system\Banglore_Silk_Junction\output.add.xml"/>
+        <net-file value="../Banglore_Silk_Junction/osm.net.xml.gz"/>
+        <route-files value="../Banglore_Silk_Junction/osm.routes.xml"/>
+        <additional-files value="../Banglore_Silk_Junction/osm.poly.xml.gz,../Banglore_Silk_Junction/output.add.xml"/>
     </input>
 
     <output>
-        <tripinfo-output value="C:\Users\sujit\Desktop\SIH25\smart-traffic-system\Banglore_Silk_Junction\tripinfos.xml"/>
-        <statistic-output value="C:\Users\sujit\Desktop\SIH25\smart-traffic-system\Banglore_Silk_Junction\stats.xml"/>
+        <summary-output value="outputs/bangalore_after_ai_summary.xml"/>
+        <tripinfo-output value="outputs/bangalore_after_ai_tripinfo.xml"/>
+        <statistic-output value="../Banglore_Silk_Junction/stats.xml"/>
     </output>
 
     <processing>
@@ -30,21 +31,26 @@
         <no-step-log value="true"/>
     </report>
 
+    <traci_server>
+        <remote-port value="8813"/>
+    </traci_server>
+
     <gui_only>
-        <gui-settings-file value="C:\Users\sujit\Desktop\SIH25\smart-traffic-system\Banglore_Silk_Junction\osm.view.xml"/>
+        <gui-settings-file value="../Banglore_Silk_Junction/osm.view.xml"/>
+        <start value="true"/>
     </gui_only>
 
 </sumoConfiguration>
 -->
 
 <statistics xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/statistic_file.xsd">
-    <performance clockBegin="140260.30" clockEnd="140305.25" clockDuration="44.96" traciDuration="0.00" realTimeFactor="29.23" vehicleUpdatesPerSecond="6746.64" personUpdatesPerSecond="0.00" begin="0.00" end="1314.00" duration="1314.00"/>
-    <vehicles loaded="2815" inserted="1312" running="318" waiting="3"/>
-    <teleports total="6" jam="1" yield="4" wrongLane="1"/>
+    <performance clockBegin="142252.17" clockEnd="142351.75" clockDuration="99.58" traciDuration="3.72" realTimeFactor="84.72" vehicleUpdatesPerSecond="72700.70" personUpdatesPerSecond="0.00" begin="0.00" end="8437.00" duration="8437.00"/>
+    <vehicles loaded="7200" inserted="4202" running="0" waiting="0"/>
+    <teleports total="1257" jam="583" yield="640" wrongLane="34"/>
     <safety collisions="0" emergencyStops="0" emergencyBraking="0"/>
     <persons loaded="0" running="0" jammed="0"/>
     <personTeleports total="0" abortWait="0" wrongDest="0"/>
-    <vehicleTripStatistics count="994" routeLength="1416.60" speed="7.74" duration="222.95" waitingTime="71.24" timeLoss="125.17" departDelay="0.85" departDelayWaiting="-1.00" totalTravelTime="221615.00" totalDepartDelay="843.50"/>
+    <vehicleTripStatistics count="4202" routeLength="1813.64" speed="3.43" duration="1722.88" waitingTime="1401.52" timeLoss="1575.83" departDelay="43.77" departDelayWaiting="-1.00" totalTravelTime="7239554.00" totalDepartDelay="183920.00"/>
     <pedestrianStatistics number="0" routeLength="0.00" duration="0.00" timeLoss="0.00"/>
     <rideStatistics number="0"/>
     <transportStatistics number="0"/>

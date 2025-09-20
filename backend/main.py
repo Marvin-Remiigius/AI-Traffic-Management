@@ -24,7 +24,7 @@ CORS(app)
 traci_port = 8813
 MAP_CONFIGS = {
     "intersection": "simulation/intersection.sumocfg",
-    "bangalore": "../Banglore_Silk_Junction_Map/osm.sumocfg"
+    "bangalore": "../Banglore_Silk_Junction/osm.sumocfg"
 }
 
 # --- Global State ---
