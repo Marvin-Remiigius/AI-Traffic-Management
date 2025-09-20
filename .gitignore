@@ -1,1 +1,79 @@
+
+
+# ========================
+# React Frontend
+# ========================
+
+# The 'node_modules' directory is where npm installs project dependencies.
+# It can be recreated by running 'npm install' and should not be committed.
+node_modules/
+
+# Production build output
+build/
+
+# Log files created by npm, yarn, or pnpm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Environment variable files should not be committed to source control.
+# They often contain sensitive information like API keys.
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Yarn 2/3 dependencies
+.pnp.*
+
+# Various cache directories
+.eslintcache
+.cache/
+.next/
+coverage/
+
+# Misc
+.DS_Store # macOS system files
+*.log
+
+# TypeScript cache
+*.tsbuildinfo
+
+
+# ========================
+# Python/Flask Backend
+# ========================
+
+# Virtual environment directory, created by venv or virtualenv.
+# This should always be ignored as it can be recreated.
+venv/
+.venv/
+
+# Byte-code files created by Python
+__pycache__/
+*.pyc
+
+# Local data and secrets. These are for development and not for production.
+# Examples might be a sqlite database file or other local storage.
+instance/
+.flaskenv
+
+# Editor-specific files. These are for a developer's specific setup.
+# You can uncomment or add more depending on your preferences.
+# .vscode/
+# *.sublime-project
+# *.sublime-workspace
+
+
+# ========================
+# General
+# ========================
+
+# Common OS and editor files
+.DS_Store
+Thumbs.db
+
+
 /Intelligent-Intersection-master
