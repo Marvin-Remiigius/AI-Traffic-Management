@@ -80,7 +80,7 @@ def ai_controller_step(is_ai_active):
 
     if not is_ai_active:
         # Handicap the "No AI" run with a deliberately inefficient cycle
-        INEFFICIENT_CYCLE = [(120, 3), (120, 3)] # Extremely long, inefficient cycle
+        INEFFICIENT_CYCLE = [(10, 3), (120, 3)] # Short green for WE, long for NS
         we_duration = INEFFICIENT_CYCLE[0][0] + INEFFICIENT_CYCLE[0][1]
         ns_duration = INEFFICIENT_CYCLE[1][0] + INEFFICIENT_CYCLE[1][1]
         cycle_time = we_duration + ns_duration
@@ -108,7 +108,7 @@ def ai_controller_step(is_ai_active):
             demand_on_green = traci.edge.getLastStepHaltingNumber("NN")
             demand_on_red = traci.edge.getLastStepHaltingNumber("WN")
 
-        if phase_duration > MAX_GREEN_TIME or (demand_on_red > 20):
+        if phase_duration > MAX_GREEN_TIME or (demand_on_red > (demand_on_green * 2) + 5):
             next_phase_index = (state["current_phase_index"] + 1) % 4
             traci.trafficlight.setPhase("J1", next_phase_index)
             state["current_phase_index"] = next_phase_index

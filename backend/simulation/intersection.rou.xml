@@ -3,5 +3,7 @@
     <vType id="emergency_vehicle" vClass="emergency" accel="4.0" decel="7.5" color="1,0,0" guiShape="emergency"/>
     
     <flow id="flow_we" type="car" begin="0" end="3600" number="1200" from="WN" to="NE"/>
+    <flow id="flow_ew" type="car" begin="0" end="3600" number="1000" from="EN" to="NW"/>
     <flow id="flow_ns" type="car" begin="0" end="3600" number="400" from="NN" to="NS"/>
+    <flow id="flow_sn" type="car" begin="0" end="3600" number="300" from="SN" to="NN"/>
 </routes>
