@@ -122,7 +122,7 @@ def run_performance_simulation(map_name, run_id, ai_mode):
 
     summary_file = f"outputs/{run_id}_summary.xml"
     trip_file = f"outputs/{run_id}_tripinfo.xml"
-    sumo_cmd = ["sumo", "-c", config_path, "--remote-port", str(traci_port), "--start",
+    sumo_cmd = ["sumo-gui", "-c", config_path, "--remote-port", str(traci_port), "--start",
                 "--tripinfo-output", trip_file,
                 "--summary-output", summary_file]
     
