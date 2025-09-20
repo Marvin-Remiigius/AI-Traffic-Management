@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2025-09-20 04:06:44 by Eclipse SUMO GUI Version 1.24.0
+<!-- generated on 2025-09-20 15:42:48 by Eclipse SUMO GUI Version 1.24.0
 <sumoConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
 
     <input>
@@ -45,10 +45,4 @@
 
 <stops xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/stopinfo_file.xsd">
     <stopinfo id="pt_bus_HSR-FDR-1:0.0" type="pt_bus" lane="1196120509#0_0" pos="18.15" parking="0" started="33.00" ended="63.00" delay="0.00" busStop="11099858549" initialPersons="0" loadedPersons="0" unloadedPersons="0" initialContainers="0" loadedContainers="0" unloadedContainers="0" blockedDuration="0.00"/>
-    <stopinfo id="pt_bus_HSR-FDR-1:0.0" type="pt_bus" lane="1196120516#0_0" pos="101.46" parking="0" started="127.00" ended="159.00" delay="0.00" busStop="11099858547" initialPersons="0" loadedPersons="0" unloadedPersons="0" initialContainers="0" loadedContainers="0" unloadedContainers="0" blockedDuration="0.00"/>
-    <stopinfo id="pt_bus_201Q:0.0" type="pt_bus" lane="92196679#0_0" pos="85.36" parking="0" started="150.00" ended="178.00" delay="0.00" busStop="2402577150" initialPersons="0" loadedPersons="0" unloadedPersons="0" initialContainers="0" loadedContainers="0" unloadedContainers="0" blockedDuration="0.00"/>
-    <stopinfo id="pt_bus_HSR-FDR-1:0.0" type="pt_bus" lane="1196120516#0_0" pos="101.48" parking="0" started="160.00" ended="190.00" delay="0.00" busStop="11099858548" initialPersons="0" loadedPersons="0" unloadedPersons="0" initialContainers="0" loadedContainers="0" unloadedContainers="0" blockedDuration="0.00"/>
-    <stopinfo id="pt_bus_201Q:0.1" type="pt_bus" lane="92196679#0_0" pos="85.36" parking="0" started="185.00" ended="205.00" delay="26.40" busStop="2402577150" initialPersons="0" loadedPersons="0" unloadedPersons="0" initialContainers="0" loadedContainers="0" unloadedContainers="0" blockedDuration="29.00"/>
-    <stopinfo id="pt_subway_Yellow:0.0" type="pt_subway" lane="607901273_0" pos="265.33" parking="0" started="181.00" ended="212.00" delay="0.00" busStop="13046007572" initialPersons="0" loadedPersons="0" unloadedPersons="0" initialContainers="0" loadedContainers="0" unloadedContainers="0" blockedDuration="0.00"/>
-    <stopinfo id="pt_subway_Yellow:0.1" type="pt_subway" lane="607901273_0" pos="150.81" parking="0" started="185.00" ended="213.00" delay="0.40" busStop="13046007572" initialPersons="0" loadedPersons="0" unloadedPersons="0" initialContainers="0" loadedContainers="0" unloadedContainers="0" blockedDuration="0.00"/>
 </stops>
