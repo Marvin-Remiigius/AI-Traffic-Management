@@ -101,6 +101,7 @@ function App() {
           <select onChange={(e) => setSelectedMap(e.target.value)} value={selectedMap} disabled={isRunning}>
             <option value="intersection">Simple Intersection</option>
             <option value="bangalore">Bangalore Silk Junction</option>
+            <option value="odisha">Odisha Rasulgarh Square</option>
           </select>
           <button onClick={handleStartSimulation} disabled={isRunning}>
             Start Simulation
